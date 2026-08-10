@@ -1,0 +1,116 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f6f9;
+  background-image: url('/images/about2.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.auth-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+}
+
+.auth-card {
+  position: relative;
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-header h2 {
+  font-size: 32px;
+  color: #2e8b57;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.auth-header p {
+  color: #64748b;
+  margin: 0;
+  font-size: 15px;
+}
+
+.auth-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #334155;
+  font-size: 14px;
+}
+
+.auth-form .form-control {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.auth-form .form-control:focus {
+  outline: none;
+  border-color: #2e8b57;
+  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  background: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 10px;
+}
+
+.auth-btn:hover {
+  background: #236c43;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 139, 87, 0.2);
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 15px;
+  color: #64748b;
+}
+
+.auth-footer a {
+  color: #2e8b57;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}

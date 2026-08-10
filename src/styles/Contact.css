@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Baloo+2:wght@600;700;800&display=swap");
+
+.contact-wrap {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 120px 5% 60px;
+  background: #f4fbf7;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(26, 58, 41, 0.08);
+  padding: 60px;
+  color: #1a3a29;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(46, 139, 87, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(46, 139, 87, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.contact-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-title {
+  margin-bottom: 40px;
+}
+
+.contact-title h1 {
+  font-family: "Baloo 2", cursive;
+  font-size: 54px;
+  line-height: 1.1;
+  color: #1a3a29;
+  margin-bottom: 15px;
+}
+
+.contact-title p {
+  font-size: 18px;
+  color: #3b5c49;
+  line-height: 1.6;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.info-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  background: #f4fbf7;
+  border: 2px solid #2e8b57;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #2e8b57;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.info-text h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a3a29;
+  margin: 0 0 5px;
+}
+
+.info-text p {
+  font-size: 16px;
+  color: #3b5c49;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Form Styles */
+.contact-form-box {
+  background: #fdfdfd;
+  border: 1px solid #e0ede5;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(26, 58, 41, 0.05);
+}
+
+.contact-form-box h2 {
+  font-family: "Baloo 2", cursive;
+  font-size: 32px;
+  color: #2e8b57;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a3a29;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #e0ede5;
+  border-radius: 10px;
+  background: #ffffff;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  color: #1a3a29;
+  outline: none;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #2e8b57;
+  box-shadow: 0 0 0 4px rgba(46, 139, 87, 0.1);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffbf2e, #ff8c00);
+  color: #260633;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(255, 191, 46, 0.3), inset 0 -2px 5px rgba(0,0,0,0.2), inset 0 2px 5px rgba(255,255,255,0.5);
+  transition: all 0.2s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 191, 46, 0.4), inset 0 -2px 5px rgba(0,0,0,0.2), inset 0 2px 5px rgba(255,255,255,0.5);
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .contact-card {
+    padding: 40px 20px;
+  }
+}

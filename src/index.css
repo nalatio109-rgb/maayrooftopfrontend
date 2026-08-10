@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --bg-color: #fffaf0; /* Fallback light background */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --primary-accent: #ffdb58; /* Mustard/Sun yellow */
+  --text-primary: #111111; 
+  --text-secondary: #555555; 
+  --font-main: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-cursive: 'Caveat', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}

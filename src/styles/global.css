@@ -1,0 +1,83 @@
+@import './variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-body);
+  background: var(--bg-solid);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  color: var(--color-primary); /* Use primary green for headings */
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Base utility classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+/* Solid premium card */
+.glass-panel {
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(10px);
+  border: var(--border-gold);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.glass-panel:hover {
+  box-shadow: var(--box-shadow-hover);
+  border-color: var(--color-primary);
+}
