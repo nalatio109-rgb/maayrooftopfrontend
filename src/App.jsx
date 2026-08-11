@@ -39,38 +39,7 @@ const features = [
   },
 ];
 
-const products = [
-  {
-    name: "Matcha Latte",
-    price: "39K",
-    image: "/images/matchalatte.png",
-    desc: "Matcha thơm béo • Đậm vị trà xanh"
-  },
-  {
-    name: "Bạc Xỉu Đậm Vị",
-    price: "22K",
-    image: "/images/matchalatte.png",
-    desc: "Cà phê sữa đá đặc trưng"
-  },
-  {
-    name: "Cà Phê Đen Đá",
-    price: "16K",
-    image: "/images/matchalatte.png",
-    desc: "Đậm đà hương vị truyền thống"
-  },
-  {
-    name: "Latte Kem Muối",
-    price: "29K",
-    image: "/images/matchalatte.png",
-    desc: "Béo ngậy mặn ngọt hòa quyện"
-  },
-  {
-    name: "Trà Đào Cam Sả",
-    price: "25K",
-    image: "/images/matchalatte.png",
-    desc: "Thanh mát giải nhiệt mùa hè"
-  },
-];
+// Hardcoded products removed in favor of API
 function Features() {
   return (
     <section className="features">
@@ -89,9 +58,33 @@ import { useCart } from "./context/CartContext";
 
 function Products() {
   const { addToCart } = useCart();
+  const [featuredProducts, setFeaturedProducts] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const res = await fetch(import.meta.env.VITE_API_URL + '/api/menu');
+        const data = await res.json();
+        // Lấy 3 sản phẩm nổi bật
+        setFeaturedProducts(data.slice(0, 3)); 
+      } catch (err) {
+        console.error("Failed to fetch featured menu", err);
+      }
+    };
+    fetchMenu();
+  }, []);
 
   const handleOrderClick = (item) => {
     addToCart(item);
+  };
+
+  const formatPrice = (priceStr) => {
+    if (!priceStr) return '';
+    let val = priceStr.toString().replace(/k/i, '').trim();
+    if (!isNaN(val) && val !== '') {
+      return Number(val).toLocaleString('vi-VN') + 'đ';
+    }
+    return priceStr;
   };
 
   return (
@@ -108,11 +101,11 @@ function Products() {
         <button className="arrowBtn">‹</button>
 
         <div className="productList">
-          {products.map((item) => (
-            <div className="productCard horizontal" key={item.name}>
+          {featuredProducts.map((item) => (
+            <div className="productCard horizontal" key={item._id || item.name}>
               <div className="cardBgDecor"></div>
               <div className="productImage">
-                <img src={item.image} alt={item.name} />
+                <img src={item.img || item.image} alt={item.name} onError={(e) => { e.target.src = '/images/espresso.png'; }} />
               </div>
 
               <div className="productInfo">
@@ -123,7 +116,7 @@ function Products() {
 
                 <div className="priceWrap">
                   <span className="sparkle left">✨</span>
-                  <div className="price">{item.price}</div>
+                  <div className="price">{formatPrice(item.price)}</div>
                 </div>
 
                 <div className="productDesc">
