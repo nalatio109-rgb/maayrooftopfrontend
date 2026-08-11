@@ -6,7 +6,8 @@ export default function AdminProducts() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [editingProduct, setEditingProduct] = useState(null);
-  const [editFormData, setEditFormData] = useState({ name: '', price: '', category: '', status: '' });
+  const [editFormData, setEditFormData] = useState({ name: '', price: '', category: '', desc: '', status: '' });
+  const [editImageFile, setEditImageFile] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const fetchProducts = () => {
@@ -51,18 +52,29 @@ export default function AdminProducts() {
       name: product.name,
       price: product.price.toString().replace('K', ''),
       category: product.category,
+      desc: product.desc || '',
       status: product.status || 'Còn hàng'
     });
+    setEditImageFile(null);
   };
 
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
+      const data = new FormData();
+      data.append('name', editFormData.name);
+      data.append('price', editFormData.price);
+      data.append('category', editFormData.category);
+      data.append('desc', editFormData.desc);
+      data.append('status', editFormData.status);
+      if (editImageFile) {
+        data.append('image', editImageFile);
+      }
+
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/menu/${editingProduct._id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(editFormData)
+        body: data
       });
 
       if (res.ok) {
@@ -148,7 +160,7 @@ export default function AdminProducts() {
         }}>
           <div style={{
             background: '#fff', width: '90%', maxWidth: '500px', borderRadius: '16px', 
-            padding: '25px', position: 'relative'
+            padding: '25px', position: 'relative', maxHeight: '90vh', overflowY: 'auto'
           }}>
             <button 
               onClick={() => setEditingProduct(null)}
@@ -200,6 +212,26 @@ export default function AdminProducts() {
                   <option value="Sinh Tố">Sinh Tố</option>
                   <option value="Đặc Biệt">Đặc Biệt</option>
                 </select>
+              </div>
+
+              <div className="form-group" style={{marginBottom: '15px'}}>
+                <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>Hình Ảnh (Bỏ trống nếu không đổi)</label>
+                <input 
+                  type="file" 
+                  accept="image/*"
+                  onChange={(e) => setEditImageFile(e.target.files[0])}
+                  style={{width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ddd'}}
+                />
+              </div>
+
+              <div className="form-group" style={{marginBottom: '15px'}}>
+                <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>Mô tả</label>
+                <textarea 
+                  value={editFormData.desc}
+                  onChange={(e) => setEditFormData({...editFormData, desc: e.target.value})}
+                  required
+                  style={{width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ddd'}}
+                />
               </div>
 
               <div className="form-group" style={{marginBottom: '20px'}}>

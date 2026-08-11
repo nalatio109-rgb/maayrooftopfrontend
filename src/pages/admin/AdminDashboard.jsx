@@ -144,8 +144,8 @@ export default function AdminDashboard() {
                     </div>
                   </div>
                   <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
-                    <span className={`status-badge ${contact.status === 'unread' ? 'new' : 'completed'}`} style={{ fontSize: '11px', padding: '4px 8px' }}>
-                      {contact.status === 'unread' ? 'Chưa đọc' : 'Đã phản hồi'}
+                    <span className={`status-badge ${contact.status === 'Chưa đọc' ? 'new' : 'completed'}`} style={{ fontSize: '11px', padding: '4px 8px' }}>
+                      {contact.status}
                     </span>
                     <button 
                       onClick={() => handleDismiss(contact._id)}
