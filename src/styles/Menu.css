@@ -387,7 +387,7 @@
   .product-card-light {
     flex-direction: row;
     height: 140px;
-    padding: 10px 10px 10px 120px;
+    padding: 10px 10px 10px 130px;
     margin-top: 20px;
     margin-left: 0;
     margin-right: 0;
@@ -395,13 +395,13 @@
   .product-img-wrap {
     bottom: auto;
     top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    height: 260px;
+    left: -10px;
+    transform: translateY(-50%);
+    width: 130px;
+    height: 240px;
   }
   .product-card-light:hover .product-img-wrap img {
-    transform: translate(-50%, -50%) scale(1.05);
+    transform: translateY(-50%) scale(1.05);
   }
   .product-info-area {
     align-items: flex-start;
