@@ -6,8 +6,8 @@ import '../styles/Navbar.css';
 
 const menuItems = [
   { name: "Trang Chủ", path: "/" },
-  { name: "Menu", path: "/thuc-don" },
   { name: "Giới Thiệu", path: "/gioi-thieu" },
+  { name: "Menu", path: "/thuc-don" },
   { name: "Liên Hệ", path: "/lien-he" },
 ];
 
