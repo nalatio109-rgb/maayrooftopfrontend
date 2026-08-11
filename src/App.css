@@ -436,16 +436,17 @@ button {
 
 .productCard.horizontal {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 10px 10px;
+  justify-content: flex-end;
+  padding: 24px;
   background: #ffffff;
   border: 1px solid #e0ede5;
   border-radius: 20px;
   position: relative;
-  min-height: 120px;
-  max-width: 320px;
-  width: 100%;
+  width: 260px;
+  min-height: 220px;
+  margin-top: 150px;
   box-shadow: 0 15px 35px rgba(26, 58, 41, 0.08);
   overflow: visible;
 }
@@ -462,7 +463,11 @@ button {
 }
 
 .productCard.horizontal .productImage {
-  flex: 0 0 35%;
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -470,12 +475,12 @@ button {
 }
 
 .productCard.horizontal .productImage img {
-  position: absolute;
-  top: 25%;
-  left: 20%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  height: 280px;
   width: auto;
-  height: 380px;
   max-width: none;
   max-height: none;
   object-fit: contain;
@@ -485,16 +490,17 @@ button {
 }
 
 .productCard.horizontal:hover .productImage img {
-  transform: translate(-50%, -50%) scale(1.08) rotate(3deg);
+  transform: scale(1.08) rotate(3deg);
 }
 
 .productCard.horizontal .productInfo {
-  flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   z-index: 1;
+  margin-top: 140px;
 }
 
 .titleWrap {
