@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Link } from 'react-router-dom';
 import "./App.css";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
@@ -102,7 +102,7 @@ function Products() {
         <span></span>
       </div>
 
-      <button className="viewAllBtn">Xem tất cả dịch vụ →</button>
+      <Link to="/thuc-don" className="viewAllBtn" style={{ textDecoration: 'none', width: 'fit-content' }}>Xem tất cả dịch vụ →</Link>
 
       <div className="productWrap">
         <button className="arrowBtn">‹</button>
