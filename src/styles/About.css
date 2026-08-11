@@ -530,9 +530,17 @@
 
   .top-section,
   .view-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     text-align: center;
     gap: 30px;
+  }
+
+  .view-photo {
+    height: 350px !important;
+  }
+
+  .view-copy h2 {
+    font-size: 45px !important;
   }
 
   .section-label {
