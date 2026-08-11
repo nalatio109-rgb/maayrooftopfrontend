@@ -11,7 +11,7 @@ function Footer() {
         <h3>MAAY COFFEE – ĐÀ NẴNG</h3>
         <p>📍 146-148 Lê Duy Đình, Đà Nẵng</p>
         <p>📞 091 700 77 77</p>
-        <p>✉️ info@maaycoffee.vn</p>
+        <p>✉️ maayrooftop@gmail.com</p>
       </div>
 
       <div className="footerCol">
