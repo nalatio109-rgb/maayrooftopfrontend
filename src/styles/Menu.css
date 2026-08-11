@@ -381,22 +381,24 @@
   }
   .menu-grid-light {
     grid-template-columns: 1fr;
-    row-gap: 100px;
+    row-gap: 120px;
     padding: 40px 15px 100px;
   }
   .product-card-light {
     flex-direction: column;
     height: auto;
-    padding: 160px 15px 20px;
-    margin-top: 80px;
+    padding: 150px 15px 20px;
+    margin-top: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   .product-img-wrap {
     bottom: auto;
-    top: -90px;
+    top: -110px;
     left: 50%;
     transform: translateX(-50%);
-    width: 160px;
-    height: 220px;
+    width: 200px;
+    height: 260px;
   }
   .product-card-light:hover .product-img-wrap img {
     transform: scale(1.05) translateY(-5px);

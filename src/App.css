@@ -778,49 +778,45 @@ button {
   }
 
   .productCard.horizontal {
-    flex-direction: column;
-    padding: 20px 15px;
+    flex-direction: row;
+    padding: 10px;
     align-items: center;
-    text-align: center;
-    margin-top: 80px;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    min-height: auto;
+    text-align: left;
+    margin-top: 50px;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    min-height: 120px;
   }
 
   .productCard.horizontal .productImage {
-    flex: none;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    flex: 0 0 35%;
     margin-top: 0;
   }
 
   .productCard.horizontal .productImage img {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    height: 160px;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    height: 260px;
     width: auto;
-    margin: -80px 0 15px 0;
+    margin: 0;
     display: block;
   }
 
   .productCard.horizontal:hover .productImage img {
-    transform: scale(1.05);
+    transform: translate(-50%, -50%) scale(1.05);
   }
 
   .productCard.horizontal .productInfo {
-    align-items: center;
-    text-align: center;
-    padding-left: 0;
-    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 5px;
   }
 
   .productCard.horizontal h4 {
-    font-size: 16px;
+    font-size: 13px;
     margin-top: 0;
   }
 
@@ -829,10 +825,9 @@ button {
   }
 
   .productCard.horizontal .orderBtn {
-    padding: 8px 20px;
-    font-size: 14px;
-    align-self: center;
-    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 11px;
+    align-self: flex-start;
   }
 
   /* Cleaned up duplicate blocks */
