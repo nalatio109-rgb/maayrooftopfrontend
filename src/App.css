@@ -782,8 +782,8 @@ button {
     padding: 0 15px 15px;
     align-items: center;
     text-align: center;
-    margin-top: 40px;
-    max-width: 260px;
+    margin-top: 80px;
+    max-width: 220px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -791,7 +791,7 @@ button {
   .productCard.horizontal .productImage {
     flex: none;
     width: 100%;
-    margin-top: -30px;
+    margin-top: -80px;
   }
 
   .productCard.horizontal .productImage img {
@@ -799,7 +799,7 @@ button {
     top: auto;
     left: auto;
     transform: none;
-    height: 160px;
+    height: 180px;
     width: auto;
     margin: 0 auto;
     display: block;
@@ -811,10 +811,11 @@ button {
 
   .productCard.horizontal h4 {
     font-size: 14px;
+    margin-top: 10px;
   }
 
   .productCard.horizontal .price {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .productCard.horizontal .orderBtn {
