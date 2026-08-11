@@ -779,16 +779,19 @@ button {
 
   .productCard.horizontal {
     flex-direction: column;
-    padding: 0 15px 20px;
+    padding: 0 15px 15px;
     align-items: center;
     text-align: center;
     margin-top: 40px;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .productCard.horizontal .productImage {
     flex: none;
     width: 100%;
-    margin-top: -40px;
+    margin-top: -30px;
   }
 
   .productCard.horizontal .productImage img {
@@ -796,7 +799,7 @@ button {
     top: auto;
     left: auto;
     transform: none;
-    height: 200px;
+    height: 160px;
     width: auto;
     margin: 0 auto;
     display: block;
@@ -804,6 +807,19 @@ button {
 
   .productCard.horizontal:hover .productImage img {
     transform: scale(1.05) translateY(-5px);
+  }
+
+  .productCard.horizontal h4 {
+    font-size: 14px;
+  }
+
+  .productCard.horizontal .price {
+    font-size: 28px;
+  }
+
+  .productCard.horizontal .orderBtn {
+    padding: 6px 14px;
+    font-size: 12px;
   }
 
   .footer {
