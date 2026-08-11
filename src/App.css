@@ -425,9 +425,8 @@ button {
 
 .productList {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 24px;
   row-gap: 150px;
   margin-top: 130px;
@@ -436,17 +435,14 @@ button {
 
 .productCard.horizontal {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  padding: 24px;
+  gap: 8px;
+  padding: 10px 10px;
   background: #ffffff;
   border: 1px solid #e0ede5;
   border-radius: 20px;
   position: relative;
-  width: 260px;
-  min-height: 220px;
-  margin-top: 150px;
+  min-height: 120px;
   box-shadow: 0 15px 35px rgba(26, 58, 41, 0.08);
   overflow: visible;
 }
@@ -463,11 +459,7 @@ button {
 }
 
 .productCard.horizontal .productImage {
-  position: absolute;
-  top: -120px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
+  flex: 0 0 35%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -475,12 +467,12 @@ button {
 }
 
 .productCard.horizontal .productImage img {
-  position: relative;
-  top: auto;
-  left: auto;
-  transform: none;
-  height: 280px;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  transform: translate(-50%, -50%);
   width: auto;
+  height: 380px;
   max-width: none;
   max-height: none;
   object-fit: contain;
@@ -490,17 +482,16 @@ button {
 }
 
 .productCard.horizontal:hover .productImage img {
-  transform: scale(1.08) rotate(3deg);
+  transform: translate(-50%, -50%) scale(1.08) rotate(3deg);
 }
 
 .productCard.horizontal .productInfo {
-  width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   z-index: 1;
-  margin-top: 140px;
 }
 
 .titleWrap {
@@ -787,45 +778,49 @@ button {
   }
 
   .productCard.horizontal {
-    flex-direction: row;
-    padding: 10px;
+    flex-direction: column;
+    padding: 20px 15px;
     align-items: center;
-    text-align: left;
-    margin-top: 50px;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    min-height: 120px;
+    text-align: center;
+    margin-top: 80px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: auto;
   }
 
   .productCard.horizontal .productImage {
-    flex: 0 0 35%;
+    flex: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     margin-top: 0;
   }
 
   .productCard.horizontal .productImage img {
-    position: absolute;
-    top: 30%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    height: 260px;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    height: 160px;
     width: auto;
-    margin: 0;
+    margin: -80px 0 15px 0;
     display: block;
   }
 
   .productCard.horizontal:hover .productImage img {
-    transform: translate(-50%, -50%) scale(1.05);
+    transform: scale(1.05);
   }
 
   .productCard.horizontal .productInfo {
-    align-items: flex-start;
-    text-align: left;
-    padding-left: 5px;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+    width: 100%;
   }
 
   .productCard.horizontal h4 {
-    font-size: 13px;
+    font-size: 16px;
     margin-top: 0;
   }
 
@@ -834,9 +829,10 @@ button {
   }
 
   .productCard.horizontal .orderBtn {
-    padding: 6px 12px;
-    font-size: 11px;
-    align-self: flex-start;
+    padding: 8px 20px;
+    font-size: 14px;
+    align-self: center;
+    margin-top: 10px;
   }
 
   /* Cleaned up duplicate blocks */
