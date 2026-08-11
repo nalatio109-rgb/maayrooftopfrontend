@@ -11,7 +11,7 @@ export default function AdminProducts() {
 
   const fetchProducts = () => {
     setLoading(true);
-    fetch('http://localhost:5000/api/menu')
+    fetch(import.meta.env.VITE_API_URL + '/api/menu')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
@@ -31,7 +31,7 @@ export default function AdminProducts() {
     if (!window.confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) return;
     
     try {
-      const res = await fetch(`http://localhost:5000/api/menu/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/menu/${id}`, {
         method: 'DELETE'
       });
       if (res.ok) {
@@ -59,7 +59,7 @@ export default function AdminProducts() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/menu/${editingProduct._id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/menu/${editingProduct._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editFormData)

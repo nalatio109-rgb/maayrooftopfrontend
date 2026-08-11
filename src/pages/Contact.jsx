@@ -25,7 +25,7 @@ const Contact = () => {
 
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/contacts', formData);
+      await axios.post(import.meta.env.VITE_API_URL + '/api/contacts', formData);
       toast.success('Gửi lời nhắn thành công! Chúng tôi sẽ sớm liên hệ với bạn.');
       setFormData({ name: '', contactInfo: '', message: '' });
     } catch (error) {

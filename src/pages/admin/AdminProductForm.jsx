@@ -36,7 +36,7 @@ export default function AdminProductForm() {
         data.append('image', imageFile);
       }
 
-      const response = await fetch('http://localhost:5000/api/menu', {
+      const response = await fetch(import.meta.env.VITE_API_URL + '/api/menu', {
         method: 'POST',
         body: data // fetch automatically sets the correct Content-Type with boundary for FormData
       });
