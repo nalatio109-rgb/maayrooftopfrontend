@@ -77,12 +77,12 @@ export default function About() {
           </svg>
         </div>
 
-        <div className="top-section top-margin-bottom">
+        <div className="top-section" style={{ marginTop: '20px', marginBottom: '80px' }}>
           <div className="story">
             <div className="story-header">
-              <div className="story-title-wrap">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                 <h2 className="story-title">MAAY ROOFTOP</h2>
-                <svg className="story-title-svg" viewBox="0 0 130 50">
+                <svg viewBox="0 0 130 50" style={{ width: '200px', fill: 'none', stroke: '#a3c4b1', strokeWidth: '1.2', marginTop: '5px' }}>
                   <path d="M8 36h104c9 0 12-13 3-17-4-12-19-15-28-7C79 0 58 4 55 20c-10-7-26-2-28 10H8" />
                 </svg>
               </div>
@@ -102,34 +102,34 @@ export default function About() {
             </div>
           </div>
 
-          <div className="top-right">
-            <div className="story-photo">
+          <div className="top-right" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+            <div className="story-photo" style={{ marginTop: '0', margin: '0' }}>
               <img src="/images/our-story.png" alt="Maay Rooftop Building" />
             </div>
           </div>
         </div>
 
-        <section className="memory-section">
+        <section style={{ marginBottom: '80px' }}>
           <div className="section-label view-label">
             <span>⌖</span>
             Góc Kỷ Niệm
           </div>
 
-          <div className="view-content memory-content">
-            <div className="view-photo memory-photo">
-              <img src="/images/maay-corner.png" alt="Maay Coffee Moments Memories" className="memory-img" />
+          <div className="view-content" style={{ gridTemplateColumns: '1.5fr 1fr' }}>
+            <div className="view-photo" style={{ height: '550px' }}>
+              <img src="/images/maay-corner.png" alt="Maay Coffee Moments Memories" style={{ objectPosition: 'center 90%' }} />
             </div>
 
             <div className="view-copy">
-              <div className="memory-subtitle">
+              <div style={{ color: '#7b9c88', fontSize: '18px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '15px' }}>
                 Memories
               </div>
-              <h2 className="memory-title">
+              <h2 style={{ fontSize: '65px', lineHeight: 1.1 }}>
                 Góc Nhỏ
                 <br />
                 Thanh Xuân
               </h2>
-              <p className="memory-desc">
+              <p style={{ marginTop: '20px', fontSize: '17px' }}>
                 Nơi lưu giữ những nụ cười rạng rỡ. Ánh sáng tự nhiên và góc decor mộc mạc tại Maay sẽ giúp bạn có những bức ảnh thật thơ và đầy cảm xúc.
               </p>
             </div>
