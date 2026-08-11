@@ -773,25 +773,37 @@ button {
 
   .productList {
     grid-template-columns: 1fr;
-    row-gap: 120px;
+    row-gap: 40px;
+    margin-top: 80px;
   }
 
   .productCard.horizontal {
     flex-direction: column;
-    padding-top: 180px; /* Space for the absolute image */
-    padding-bottom: 20px;
+    padding: 0 15px 20px;
     align-items: center;
     text-align: center;
+    margin-top: 60px;
+  }
+
+  .productCard.horizontal .productImage {
+    flex: none;
+    width: 100%;
+    margin-top: -70px;
   }
 
   .productCard.horizontal .productImage img {
-    height: 250px;
-    top: -90px;
-    left: 50%;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    height: 200px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
   }
 
   .productCard.horizontal:hover .productImage img {
-    transform: translate(-50%, -50%) scale(1.05);
+    transform: scale(1.05) translateY(-5px);
   }
 
   .footer {
