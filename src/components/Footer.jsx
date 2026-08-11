@@ -31,7 +31,7 @@ function Footer() {
       </div>
 
       <div className="copyright">
-        © 2024 MAAY COFFEE – ĐÀ NẴNG. Tất cả quyền được bảo lưu.
+        © 2026 MAAY COFFEE – ĐÀ NẴNG. Tất cả quyền được bảo lưu tại <a href="https://latio.vn/" target="_blank" rel="noopener noreferrer">Latio</a>.
       </div>
     </footer>
   );
