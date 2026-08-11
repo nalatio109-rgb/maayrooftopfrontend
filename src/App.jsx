@@ -63,7 +63,7 @@ function Products() {
   React.useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const res = await fetch(import.meta.env.VITE_API_URL + '/api/menu');
+        const res = await fetch(import.meta.env.VITE_API_URL.replace(/\/+$/, '') + '/api/menu');
         const data = await res.json();
         // Lấy 5 sản phẩm mới nhất làm nổi bật
         setFeaturedProducts(data.reverse().slice(0, 5)); 

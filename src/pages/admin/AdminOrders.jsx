@@ -8,7 +8,7 @@ export default function AdminOrders() {
 
   const fetchOrders = async () => {
     try {
-      const res = await fetch(import.meta.env.VITE_API_URL + '/api/orders');
+      const res = await fetch(import.meta.env.VITE_API_URL.replace(/\/+$/, '') + '/api/orders');
       if (res.ok) {
         const data = await res.json();
         setOrders(data);
@@ -28,7 +28,7 @@ export default function AdminOrders() {
     if (!window.confirm('Xác nhận duyệt đơn hàng này?')) return;
     
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders/${id}/status`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL.replace(/\/+$/, '')}/api/orders/${id}/status`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'Hoàn thành' })

@@ -36,7 +36,7 @@ export default function AdminLayout() {
   const { logout, user } = useAuth();
 
   useEffect(() => {
-    const socket = io(import.meta.env.VITE_API_URL + '');
+    const socket = io(import.meta.env.VITE_API_URL.replace(/\/+$/, '') + '');
     
     socket.on('new_order', (order) => {
       playTingSound();

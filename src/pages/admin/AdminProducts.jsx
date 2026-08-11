@@ -12,7 +12,7 @@ export default function AdminProducts() {
 
   const fetchProducts = () => {
     setLoading(true);
-    fetch(import.meta.env.VITE_API_URL + '/api/menu')
+    fetch(import.meta.env.VITE_API_URL.replace(/\/+$/, '') + '/api/menu')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
@@ -32,7 +32,7 @@ export default function AdminProducts() {
     if (!window.confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) return;
     
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/menu/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL.replace(/\/+$/, '')}/api/menu/${id}`, {
         method: 'DELETE'
       });
       if (res.ok) {
@@ -72,7 +72,7 @@ export default function AdminProducts() {
         data.append('image', editImageFile);
       }
 
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/menu/${editingProduct._id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL.replace(/\/+$/, '')}/api/menu/${editingProduct._id}`, {
         method: 'PUT',
         body: data
       });

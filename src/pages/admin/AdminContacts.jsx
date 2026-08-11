@@ -10,7 +10,7 @@ export default function AdminContacts() {
 
   const fetchContacts = async () => {
     try {
-      const res = await axios.get(import.meta.env.VITE_API_URL + '/api/contacts');
+      const res = await axios.get(import.meta.env.VITE_API_URL.replace(/\/+$/, '') + '/api/contacts');
       setContacts(res.data);
     } catch (error) {
       console.error('Error fetching contacts:', error);
@@ -23,7 +23,7 @@ export default function AdminContacts() {
   useEffect(() => {
     fetchContacts();
     
-    const socket = io(import.meta.env.VITE_API_URL + '');
+    const socket = io(import.meta.env.VITE_API_URL.replace(/\/+$/, '') + '');
     socket.on('new_contact', (newContact) => {
       setContacts(prev => [newContact, ...prev]);
     });
@@ -36,7 +36,7 @@ export default function AdminContacts() {
   const handleDelete = async (id) => {
     if (window.confirm('Bạn có chắc muốn xóa liên hệ này?')) {
       try {
-        await axios.delete(`${import.meta.env.VITE_API_URL}/api/contacts/${id}`);
+        await axios.delete(`${import.meta.env.VITE_API_URL.replace(/\/+$/, '')}/api/contacts/${id}`);
         setContacts(contacts.filter(c => c._id !== id));
         toast.success('Xóa thành công!');
       } catch (error) {
@@ -48,7 +48,7 @@ export default function AdminContacts() {
 
   const handleMarkAsReplied = async (id) => {
     try {
-      const res = await axios.put(`${import.meta.env.VITE_API_URL}/api/contacts/${id}/status`, { status: 'Đã phản hồi' });
+      const res = await axios.put(`${import.meta.env.VITE_API_URL.replace(/\/+$/, '')}/api/contacts/${id}/status`, { status: 'Đã phản hồi' });
       setContacts(contacts.map(c => c._id === id ? res.data : c));
       toast.success('Đã đánh dấu là đã phản hồi!');
     } catch (error) {

@@ -26,8 +26,8 @@ export default function AdminDashboard() {
     const fetchDashboardData = async () => {
       try {
         const [ordersRes, contactsRes] = await Promise.all([
-          axios.get(import.meta.env.VITE_API_URL + '/api/orders'),
-          axios.get(import.meta.env.VITE_API_URL + '/api/contacts')
+          axios.get(import.meta.env.VITE_API_URL.replace(/\/+$/, '') + '/api/orders'),
+          axios.get(import.meta.env.VITE_API_URL.replace(/\/+$/, '') + '/api/contacts')
         ]);
         
         const today = new Date().toDateString();
