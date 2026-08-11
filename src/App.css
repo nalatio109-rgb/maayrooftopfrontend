@@ -774,7 +774,7 @@ button {
   .productList {
     grid-template-columns: 1fr;
     row-gap: 40px;
-    margin-top: 80px;
+    margin-top: 60px;
   }
 
   .productCard.horizontal {
@@ -782,13 +782,13 @@ button {
     padding: 0 15px 20px;
     align-items: center;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 40px;
   }
 
   .productCard.horizontal .productImage {
     flex: none;
     width: 100%;
-    margin-top: -70px;
+    margin-top: -40px;
   }
 
   .productCard.horizontal .productImage img {
