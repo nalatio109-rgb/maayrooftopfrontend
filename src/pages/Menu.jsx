@@ -85,20 +85,20 @@ export default function Menu() {
                 <div className="product-img-wrap">
                   <img src={item.img || item.image} alt={item.name} onError={(e) => { e.target.src = '/images/espresso.png'; }} />
                 </div>
-                <div className="product-info-wrap">
+                <div className="product-info-area">
                   <h3 className="product-name">
                     <span role="img" aria-label="leaf" style={{fontSize: '14px', marginBottom: '2px', marginRight: '4px'}}>🌿</span>
                     {item.name}
                   </h3>
                   
-                  <div className="product-price-row">
+                  <div className="product-price-wrap">
                     <span role="img" aria-label="sparkle" style={{fontSize: '18px', marginRight: '4px'}}>✨</span>
                     <div className="product-price">{formatPrice(item.price)}</div>
                   </div>
 
-                  <div className="product-desc">
+                  <div className="product-desc-pill">
                     <span role="img" aria-label="plant" style={{fontSize: '12px', marginRight: '4px'}}>🌱</span>
-                    {item.desc}
+                    <span className="product-desc-text">{item.desc}</span>
                   </div>
 
                   <button 
