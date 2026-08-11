@@ -100,11 +100,11 @@ export default function AdminProductForm() {
                 required
               >
                 <option value="">-- Chọn danh mục --</option>
-                <option value="Trà Sữa Nguyên Bản">Trà sữa nguyên bản</option>
-                <option value="Trà Sữa Đặc Sản">Trà sữa đặc sản</option>
+                <option value="Trà Sữa Nguyên Bản">Trà Sữa Nguyên Bản</option>
+                <option value="Trà Sữa Đặc Sản">Trà Sữa Đặc Sản</option>
                 <option value="Matcha">Matcha</option>
-                <option value="Trà Hoa Quả">Trà hoa quả</option>
-                <option value="Cafes">Cafes</option>
+                <option value="Trà Hoa Quả">Trà Hoa Quả</option>
+                <option value="Cà Phê">Cà Phê</option>
                 <option value="Topping">Topping</option>
                 <option value="Coldbrew">Coldbrew</option>
               </select>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import '../styles/Menu.css';
 
-const categories = ["Tất Cả", "Trà Sữa Nguyên Bản", "Trà Sữa Đặc Sản", "Matcha", "Trà Hoa Quả", "Cafes", "Topping", "Coldbrew"];
+const categories = ["Tất Cả", "Trà Sữa Nguyên Bản", "Trà Sữa Đặc Sản", "Matcha", "Trà Hoa Quả", "Cà Phê", "Topping", "Coldbrew"];
 
 export default function Menu() {
   const [activeTab, setActiveTab] = useState("Tất Cả");
