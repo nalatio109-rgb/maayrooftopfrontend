@@ -16,7 +16,7 @@ function Footer() {
 
       <div className="footerCol">
         <h3>GIỜ MỞ CỬA</h3>
-        <p>🕘 17:00 – 24:00</p>
+        <p>🕘 7h-22h30</p>
         <p>Thứ 2 – Chủ nhật</p>
       </div>
 
