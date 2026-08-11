@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=League+Gothic&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=League+Gothic&family=Pattaya&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap");
 
 @font-face {
   font-family: 'Core Paint';
@@ -220,11 +220,10 @@ button {
 
 .slogan {
   margin-top: 18px;
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 32px;
   color: #ffd64e;
-  font-family: var(--font-cursive);
-  letter-spacing: 1px;
+  font-family: 'Pattaya', sans-serif;
+  letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
