@@ -77,12 +77,12 @@ export default function About() {
           </svg>
         </div>
 
-        <div className="top-section" style={{ marginTop: '20px', marginBottom: '80px' }}>
+        <div className="top-section top-section-spacing">
           <div className="story">
             <div className="story-header">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+              <div className="story-title-wrap">
                 <h2 className="story-title">MAAY ROOFTOP</h2>
-                <svg viewBox="0 0 130 50" style={{ width: '200px', fill: 'none', stroke: '#a3c4b1', strokeWidth: '1.2', marginTop: '5px' }}>
+                <svg viewBox="0 0 130 50" className="story-title-svg">
                   <path d="M8 36h104c9 0 12-13 3-17-4-12-19-15-28-7C79 0 58 4 55 20c-10-7-26-2-28 10H8" />
                 </svg>
               </div>
@@ -109,22 +109,22 @@ export default function About() {
           </div>
         </div>
 
-        <section style={{ marginBottom: '80px' }}>
+        <section className="memories-section">
           <div className="section-label view-label">
             <span>⌖</span>
             Góc Kỷ Niệm
           </div>
 
-          <div className="view-content" style={{ gridTemplateColumns: '1.5fr 1fr' }}>
-            <div className="view-photo" style={{ height: '550px' }}>
+          <div className="view-content memories-grid">
+            <div className="view-photo memories-photo">
               <img src="/images/maay-corner.png" alt="Maay Coffee Moments Memories" style={{ objectPosition: 'center 90%' }} />
             </div>
 
             <div className="view-copy">
-              <div style={{ color: '#7b9c88', fontSize: '18px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '15px' }}>
+              <div className="memories-subtitle">
                 Memories
               </div>
-              <h2 style={{ fontSize: '65px', lineHeight: 1.1 }}>
+              <h2 className="memories-title">
                 Góc Nhỏ
                 <br />
                 Thanh Xuân
