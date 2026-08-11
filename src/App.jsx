@@ -98,8 +98,6 @@ function Products() {
       <Link to="/thuc-don" className="viewAllBtn" style={{ textDecoration: 'none', width: 'fit-content' }}>Xem tất cả dịch vụ →</Link>
 
       <div className="productWrap">
-        <button className="arrowBtn">‹</button>
-
         <div className="productList">
           {featuredProducts.map((item) => (
             <div className="productCard horizontal" key={item._id || item.name}>
@@ -130,8 +128,6 @@ function Products() {
             </div>
           ))}
         </div>
-
-        <button className="arrowBtn">›</button>
       </div>
     </section>
   );
