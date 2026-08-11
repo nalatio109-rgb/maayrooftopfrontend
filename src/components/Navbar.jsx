@@ -14,6 +14,7 @@ const menuItems = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { user, isAuthenticated, logout } = useAuth();
   const { cartCount } = useCart();
@@ -37,6 +38,11 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
   const isHome = location.pathname === '/';
   const isTransparent = isHome && !isScrolled;
 
@@ -46,6 +52,7 @@ export default function Navbar() {
         <img src="/images/logo-maay-black.png" alt="Maay Rooftop" />
       </div>
 
+      {/* Desktop Links */}
       <nav className="navbar-links">
         {menuItems.map((item, index) => (
           <Link to={item.path} key={index} className="nav-item">
@@ -54,7 +61,27 @@ export default function Navbar() {
         ))}
       </nav>
 
+      {/* Mobile Links Dropdown */}
+      <div className={`mobile-menu-dropdown ${isMobileMenuOpen ? 'open' : ''}`}>
+        {menuItems.map((item, index) => (
+          <Link to={item.path} key={index} className="mobile-nav-item">
+            {item.name}
+          </Link>
+        ))}
+      </div>
+
       <div className="navbar-actions" style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
+        
+        {/* Hamburger Icon for Mobile */}
+        <button 
+          className={`hamburger-btn ${isMobileMenuOpen ? 'open' : ''}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <span className="bar" style={{background: isTransparent && !isMobileMenuOpen ? '#fff' : '#1a3a29'}}></span>
+          <span className="bar" style={{background: isTransparent && !isMobileMenuOpen ? '#fff' : '#1a3a29'}}></span>
+          <span className="bar" style={{background: isTransparent && !isMobileMenuOpen ? '#fff' : '#1a3a29'}}></span>
+        </button>
+
         <Link to="/gio-hang" className="cart-icon-container" style={{position: 'relative', cursor: 'pointer', padding: '5px', textDecoration: 'none'}}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{color: isTransparent ? '#fff' : '#1a3a29'}}>
             <circle cx="9" cy="21" r="1"></circle>

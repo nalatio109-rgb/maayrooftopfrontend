@@ -148,11 +148,15 @@
 }
 
 @media (max-width: 768px) {
-  .hero-title { font-size: 3.5rem; }
-  .main-headline { font-size: 1.8rem; }
+  .hero-container { padding: 3rem 1rem; }
+  .hero-title { font-size: 2.8rem; }
+  .main-headline { font-size: 1.5rem; }
+  .hero-description { font-size: 1.2rem; margin-bottom: 1.5rem; }
+  .hero-subtitle { font-size: 1rem; letter-spacing: 2px; }
   .decoration-left, .decoration-right {
     position: static;
     margin: 1rem 0;
     transform: none;
+    display: none;
   }
 }

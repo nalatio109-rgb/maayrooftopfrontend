@@ -773,6 +773,25 @@ button {
 
   .productList {
     grid-template-columns: 1fr;
+    row-gap: 120px;
+  }
+
+  .productCard.horizontal {
+    flex-direction: column;
+    padding-top: 180px; /* Space for the absolute image */
+    padding-bottom: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .productCard.horizontal .productImage img {
+    height: 250px;
+    top: -90px;
+    left: 50%;
+  }
+
+  .productCard.horizontal:hover .productImage img {
+    transform: translate(-50%, -50%) scale(1.05);
   }
 
   .footer {
