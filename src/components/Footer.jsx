@@ -23,10 +23,10 @@ function Footer() {
       <div className="footerCol">
         <h3>KẾT NỐI VỚI CHÚNG TÔI</h3>
         <div className="socials">
-          <a href="#">f</a>
+          <a href="https://www.facebook.com/maayrooftop" target="_blank" rel="noopener noreferrer">f</a>
           <a href="#">◎</a>
-          <a href="#">♪</a>
-          <a href="#">Z</a>
+          <a href="https://www.tiktok.com/@maayrooftop.43?lang=vi-VN" target="_blank" rel="noopener noreferrer">♪</a>
+          <a href="https://zalo.me/0917007777" target="_blank" rel="noopener noreferrer">Z</a>
         </div>
       </div>
 
