@@ -65,8 +65,8 @@ function Products() {
       try {
         const res = await fetch(import.meta.env.VITE_API_URL + '/api/menu');
         const data = await res.json();
-        // Lấy 3 sản phẩm nổi bật
-        setFeaturedProducts(data.slice(0, 3)); 
+        // Lấy 5 sản phẩm mới nhất làm nổi bật
+        setFeaturedProducts(data.reverse().slice(0, 5)); 
       } catch (err) {
         console.error("Failed to fetch featured menu", err);
       }
