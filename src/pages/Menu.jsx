@@ -67,7 +67,7 @@ export default function Menu() {
       <section className="menu-grid-light">
         {loading ? (
           <div style={{ color: '#1a3a29', gridColumn: '1 / -1', textAlign: 'center', fontSize: '20px', padding: '50px' }}>
-            Đang tải thực đơn từ máy chủ...
+            Đang tải...
           </div>
         ) : (
           filteredItems.map(item => {
@@ -81,39 +81,32 @@ export default function Menu() {
             };
 
             return (
-              <article className="product-card-light" key={item._id || item.id}>
-                <div className="product-img-wrap">
+              <div className="productCard horizontal" key={item._id || item.id}>
+                <div className="cardBgDecor"></div>
+                <div className="productImage">
                   <img src={item.img || item.image} alt={item.name} onError={(e) => { e.target.src = '/images/espresso.png'; }} />
                 </div>
-                <div className="product-info-area">
-                  <h3 className="product-name">
-                    <span role="img" aria-label="leaf" style={{fontSize: '14px', marginBottom: '2px', marginRight: '4px'}}>🌿</span>
-                    {item.name}
-                  </h3>
-                  
-                  <div className="product-price-wrap">
-                    <span role="img" aria-label="sparkle" style={{fontSize: '18px', marginRight: '4px'}}>✨</span>
-                    <div className="product-price">{formatPrice(item.price)}</div>
+
+                <div className="productInfo">
+                  <div className="titleWrap">
+                    <span className="leafIcon">🌿</span>
+                    <h4>{item.name}</h4>
                   </div>
 
-                  <div className="product-desc-pill">
-                    <span role="img" aria-label="plant" style={{fontSize: '12px', marginRight: '4px'}}>🌱</span>
-                    <span className="product-desc-text">{item.desc}</span>
+                  <div className="priceWrap">
+                    <span className="sparkle left">✨</span>
+                    <div className="price">{formatPrice(item.price)}</div>
                   </div>
 
-                  <button 
-                    className="order-btn-icon" 
-                    onClick={() => addToCart(item)} 
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
-                      <circle cx="9" cy="21" r="1"></circle>
-                      <circle cx="20" cy="21" r="1"></circle>
-                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg>
-                    Đặt ngay
+                  <div className="productDesc">
+                    <span className="descIcon">🌱</span> {item.desc}
+                  </div>
+
+                  <button className="orderBtn" onClick={() => addToCart(item)}>
+                    <span className="cartIcon">🛒</span> Đặt ngay
                   </button>
                 </div>
-              </article>
+              </div>
             );
           })
         )}

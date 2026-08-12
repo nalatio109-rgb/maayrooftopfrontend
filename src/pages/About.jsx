@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/About.css";
 
 const benefits = [
@@ -65,6 +66,8 @@ function LineIcon({ type }) {
 }
 
 export default function About() {
+  const navigate = useNavigate();
+
   return (
     <main className="about-wrap">
       <section className="about-card">
@@ -192,7 +195,7 @@ export default function About() {
         <div className="cta-wrapper">
           <div className="cta">
             <h2>Hãy Đến Và Cảm Nhận</h2>
-            <button>Đặt Bàn Ngay →</button>
+            <button onClick={() => navigate('/thuc-don')}>Ghé Thăm Ngay →</button>
           </div>
 
           <svg className="bottom-cup" viewBox="0 0 80 100">

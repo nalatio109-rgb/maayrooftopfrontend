@@ -160,12 +160,12 @@
 .menu-grid-light {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 40px 20px 100px;
+  padding: 140px 20px 100px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 340px);
   justify-content: center;
   gap: 20px;
-  row-gap: 80px;
+  row-gap: 120px;
   position: relative;
   z-index: 2;
 }
@@ -214,12 +214,14 @@
 }
 
 .product-img-wrap img {
-  width: 100%;
-  height: 100%;
+  height: 240px;
+  width: auto;
   object-fit: contain;
+  border-radius: 20px;
   filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
   transition: transform 0.3s ease;
   transform-origin: bottom center;
+  background-color: transparent; /* In case it's transparent, keep it clean */
 }
 
 .product-card-light:hover .product-img-wrap img {
@@ -408,8 +410,10 @@
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 220px;
     width: auto;
-    height: 240px;
+    object-fit: contain;
+    border-radius: 16px;
   }
   .product-card-light:hover .product-img-wrap img {
     transform: translate(-50%, -50%) scale(1.05);

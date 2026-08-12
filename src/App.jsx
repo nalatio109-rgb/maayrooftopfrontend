@@ -59,6 +59,7 @@ import { useCart } from "./context/CartContext";
 function Products() {
   const { addToCart } = useCart();
   const [featuredProducts, setFeaturedProducts] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     const fetchMenu = async () => {
@@ -67,8 +68,10 @@ function Products() {
         const data = await res.json();
         // Lấy 5 sản phẩm mới nhất làm nổi bật
         setFeaturedProducts(data.reverse().slice(0, 5)); 
+        setLoading(false);
       } catch (err) {
         console.error("Failed to fetch featured menu", err);
+        setLoading(false);
       }
     };
     fetchMenu();
@@ -99,7 +102,12 @@ function Products() {
 
       <div className="productWrap">
         <div className="productList">
-          {featuredProducts.map((item) => (
+          {loading ? (
+            <div style={{ color: '#1a3a29', gridColumn: '1 / -1', textAlign: 'center', fontSize: '20px', padding: '50px' }}>
+              Đang tải...
+            </div>
+          ) : (
+            featuredProducts.map((item) => (
             <div className="productCard horizontal" key={item._id || item.name}>
               <div className="cardBgDecor"></div>
               <div className="productImage">
@@ -126,7 +134,7 @@ function Products() {
                 </button>
               </div>
             </div>
-          ))}
+          )))}
         </div>
       </div>
     </section>
